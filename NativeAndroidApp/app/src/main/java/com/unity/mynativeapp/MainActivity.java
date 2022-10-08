@@ -1,23 +1,21 @@
 package com.unity.mynativeapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.unity.mynativeapp.databinding.ActivityMainBinding;
-import com.unity3d.player.UnityPlayerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     boolean isUnityLoaded = false;
     private ActivityMainBinding binding = null;
-    private Class<? extends UnityPlayerActivity> unityActivityClass = null;
+    private Class<? extends Activity> unityActivityClass = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpClickListeners() {
         binding.content.showDefault.setOnClickListener(this::showDefault);
-        binding.content.showCustom.setOnClickListener(this::showCustom);
+        binding.content.showOverlaid.setOnClickListener(this::showOverlaid);
+        binding.content.showContained.setOnClickListener(this::showOverlaid);
         binding.content.unload.setOnClickListener(view -> unloadUnity(false));
     }
 
@@ -67,8 +66,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showCustom(View v) {
-        unityActivityClass = CustomUnityActivity.class;
+    private void showOverlaid(View v) {
+        unityActivityClass = OverlaidActivity.class;
+        goToUnityActivity();
+    }
+
+    private void showContained(View v) {
+        unityActivityClass = ContainedActivity.class;
         goToUnityActivity();
     }
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         goToUnityActivity();
     }
 
-    private void goToUnityActivity(){
+    private void goToUnityActivity() {
         isUnityLoaded = true;
         Intent intent = new Intent(this, unityActivityClass);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -97,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("doQuit", true);
             startActivity(intent);
             isUnityLoaded = false;
-        } else if (doShowToast) Toast.makeText(getApplicationContext(), "Show Unity First", Toast.LENGTH_SHORT).show();
+        } else if (doShowToast)
+            Toast.makeText(getApplicationContext(), "Show Unity First", Toast.LENGTH_SHORT).show();
     }
 
     public void btnUnloadUnity(View v) {

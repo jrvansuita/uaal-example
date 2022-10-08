@@ -4,32 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="50dp"
     tools:showIn="@layout/activity_main">
 
     <Button
-
         android:id="@+id/show_default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="66dp"
-        android:layout_marginEnd="36dp"
-        android:text="Show Unity Default"/>
+        android:text="Show Unity Default" />
 
     <Button
-        android:id="@+id/show_custom"
+        android:id="@+id/show_overlaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
-        android:text="Show Unity Custom" />
+        android:text="Show Unity - Overlaid" />
+
+    <Button
+        android:id="@+id/show_contained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Show Unity - Contained" />
 
     <Button
         android:id="@+id/unload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="btnUnloadUnity"
         android:text="Finish" />
