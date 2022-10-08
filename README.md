@@ -1,4 +1,10 @@
+<a href="https://appetize.io/embed/3gjwldy2y6g42n5drq3ln3sio4?device=pixel4&osVersion=11.0&scale=75">
+<img src="https://github.com/jrvansuita/uaal-example/blob/master/NativeAndroidApp/video/working-sample.gif?raw=true" align="left" hspace="2" vspace="2" width="300">
+</a>
+
+
 # Unity as a Library integration example to iOS and Android #
+
 
 In some scenario developers using native platform technologies (like Android/Java & iOS/Objective C) want to include in their apps/games features powered by Unity for 3D/2D Real Time Rendering, AR experience, interaction with 3D models, 2D mini games and more.
 
