@@ -22,6 +22,15 @@
 
         <activity
             android:label="@string/app_name"
+            android:name="com.unity.mynativeapp.CustomUnityActivity"
+            android:screenOrientation="fullSensor"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="false"
+            android:process=":Unity">
+        </activity>
+
+        <activity
+            android:label="@string/app_name"
             android:name="com.unity.mynativeapp.MainUnityActivity"
             android:screenOrientation="fullSensor"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
